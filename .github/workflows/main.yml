@@ -24,7 +24,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Copy files
         run: |
-          cp -v *.md /var/www/www.kn0rki.de/jekyll/_posts/
+          cp *.md /var/www/www.kn0rki.de/jekyll/_posts/
+
   deploy:
     runs-on: self-hosted
     steps:
