@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Copy files
         run: |
-          cp *.md /var/www/www.kn0rki.de/jekyll/_posts/
+          rsync -av --delete --exclude '.git*' --exclude 'README.md' . /var/www/www.kn0rki.de/jekyll/_posts/
 
   deploy:
     needs: build
