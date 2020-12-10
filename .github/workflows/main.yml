@@ -27,6 +27,7 @@ jobs:
           cp *.md /var/www/www.kn0rki.de/jekyll/_posts/
 
   deploy:
+    needs: build
     runs-on: self-hosted
     steps:
       - name:
