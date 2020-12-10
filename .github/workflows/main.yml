@@ -2,7 +2,7 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
@@ -34,3 +34,9 @@ jobs:
           echo test, and deploy your project.
           pwd
           ls -la
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Copy files
+        run: |
+          cp -v *.md /var/www/www.kn0rki.de/jekyll/_posts/
