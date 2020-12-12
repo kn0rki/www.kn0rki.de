@@ -22,9 +22,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Copy files
+      - name: build
         run: |
-          rsync -av --delete --exclude '.git*' --exclude 'README.md' . /var/www/www.kn0rki.de/jekyll/_posts/
+          bundle
 
   deploy:
     needs: build
@@ -32,5 +32,5 @@ jobs:
     steps:
       - name:
         run: |
-          cd /var/www/www.kn0rki.de/jekyll/
-          bundle exec jekyll build
+          JEKYLL_ENV=production jekyll b -q -d /var/www/www.kn0rki.de/html/
+          ls -lsR /var/www/www.kn0rki.de/html/
