@@ -33,4 +33,3 @@ jobs:
       - name:
         run: |
           JEKYLL_ENV=production jekyll b -q -d /var/www/kn0rki.de/html/
-          ls -lsR /var/www/kn0rki.de/html/
