@@ -6,7 +6,7 @@ author:
   url: "https://kn0rki.de"
 
 baseurl: /
-
+url: "https://kn0rki.de"
 source: .
 destination: ./_site
 #permalink: /:title
