@@ -12,7 +12,7 @@ Siehe:
 
 Das hintere VSCode Fenster ist in einer neu installierten Virtuellen Maschine. Alles frisch installiert.  
 
-Das vorder VSCode Fenster ist von meiner Arbeitsmaschine.  
+Das vordere VSCode Fenster ist von meiner Arbeitsmaschine.  
 Die Einstellungen und Erweiterungen von VSCode wurden alle auf $null gesetzt. Leider keine Verbesserung.  
 
 Beim vorderen sieht das ganze irgendwie krisselig aus. Nach einigen Google suchen und rumprobieren kam ich auf die "TrueType" / "ClearType" Einstellungen.
