@@ -14,22 +14,29 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  setup:
     # The type of runner that the job will run on
-    runs-on: self-hosted
-
+    runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: build
+      - name: setup ruby
         run: |
           bundle
+          JEKYLL_ENV=production jekyll b -q
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: site-items
+          path: _site/
 
   deploy:
     needs: build
     runs-on: self-hosted
     steps:
-      - name:
-        run: |
-          JEKYLL_ENV=production jekyll b -q -d /var/www/kn0rki.de/html/
+      - name: Download artifacts
+      - uses: actions/download-artifact@v2
+        with:
+          name: site-items
+          path: /var/www/kn0rki.de/html/
