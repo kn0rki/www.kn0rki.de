@@ -24,9 +24,10 @@ jobs:
       - name: setup ruby
         run: |
           sudo apt-get -y install ruby-full build-essential zlib1g-dev
-          gem install jekyll bundler
+          sudo gem install jekyll bundler
           bundle
           JEKYLL_ENV=production jekyll b -q
+
 
       - uses: actions/upload-artifact@v2
         with:
